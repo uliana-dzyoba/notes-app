@@ -79,8 +79,11 @@ WSGI_APPLICATION = 'notesapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'TestDocker',
+        'CLIENT': {
+           'host': 'localhost:2717',
+        }
     }
 }
 
