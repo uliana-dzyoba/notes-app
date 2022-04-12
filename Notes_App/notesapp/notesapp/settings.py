@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'notesDB',
         'CLIENT': {
-           'host': 'localhost:27017',
+           'host': 'notesmongo:27017',
         }
     }
 }
