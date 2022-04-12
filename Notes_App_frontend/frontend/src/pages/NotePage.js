@@ -65,7 +65,6 @@ const NotePage = () => {
 
   let handleChange = (value) => {
     setNote(note => ({ ...note, 'body': value }))
-    console.log('Handle Change:', note)
   }
 
   return (

@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'notesapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'TestDocker',
+        'NAME': 'notesDB',
         'CLIENT': {
-           'host': 'localhost:2717',
+           'host': 'localhost:27017',
         }
     }
 }
