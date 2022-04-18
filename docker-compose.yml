@@ -1,0 +1,23 @@
+version: "3"
+services:
+  notesmongo:
+    image: mongo:latest
+    container_name: notesmongo
+    ports:
+      - 27017:27017
+    volumes:
+      - './Database:/data/db'
+  notes-backend:
+    image: notes-backend
+    container_name: notes-backend
+    depends_on:
+      - notesmongo
+    ports:
+      - 8000:8000
+  notes-frontend:
+    image: notes-frontend
+    container_name: notes-frontend
+    depends_on:
+      - notes-backend
+    ports:
+      - 3000:3000
