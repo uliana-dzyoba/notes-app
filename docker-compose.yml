@@ -6,7 +6,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - './Database:/data/db'
+      - ./Database:/data/db
   notes-backend:
     build: ./Notes_App
     command: sh -c "gunicorn --bind 0.0.0.0:8000 --chdir notesapp notesapp.wsgi"
