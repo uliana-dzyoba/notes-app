@@ -8,16 +8,33 @@ services:
     volumes:
       - './Database:/data/db'
   notes-backend:
-    image: notes-backend
+    build: ./Notes_App
+    command: sh -c "gunicorn --bind 0.0.0.0:8000 --chdir notesapp notesapp.wsgi"
+    volumes:
+      - static_volume:/app/static
     container_name: notes-backend
     depends_on:
       - notesmongo
     ports:
       - 8000:8000
+    environment:
+    - DATABASE_CLIENT=notesmongo:27017
   notes-frontend:
-    image: notes-frontend
+    build: ./Notes_App_frontend/frontend
     container_name: notes-frontend
     depends_on:
       - notes-backend
     ports:
       - 3000:3000
+  nginx:
+    image: pagespeed/nginx-pagespeed:latest
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+      - static_volume:/app/static
+    ports:
+      - 80:80
+    depends_on:
+      - notes-backend
+
+volumes:
+  static_volume:
