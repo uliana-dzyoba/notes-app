@@ -28,6 +28,7 @@ services:
       - 3000:3000
   nginx:
     image: pagespeed/nginx-pagespeed:latest
+    container_name: notesnginx
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
       - static_volume:/app/static
