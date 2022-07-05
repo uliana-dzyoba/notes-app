@@ -11,7 +11,7 @@ services:
     build: ./Notes_App
     command: sh -c "gunicorn --bind 0.0.0.0:8000 --chdir notesapp notesapp.wsgi"
     volumes:
-      - static_volume:/app/static
+      - ./Notes_App/notesapp/static:/app/static
     container_name: notes-backend
     depends_on:
       - notesmongo
@@ -31,11 +31,8 @@ services:
     container_name: notesnginx
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
-      - static_volume:/app/static
+      - ./Notes_App/notesapp/static:/app/static
     ports:
       - 80:80
     depends_on:
       - notes-backend
-
-volumes:
-  static_volume:
