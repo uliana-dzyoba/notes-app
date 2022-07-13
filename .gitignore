@@ -126,3 +126,6 @@ dmypy.json
 
 # Database
 Database/
+
+# IntelliJ project specific settings
+.idea
