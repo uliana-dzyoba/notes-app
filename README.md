@@ -2,7 +2,7 @@
 
 [Frontend part of the application](https://github.com/divanov11/Django-React-NotesApp)
 
-The app supports basic CRUD functionality
+The app supports basic CRUD functionality and implements REST API
  
 ### How to run
 * Clone the repo
