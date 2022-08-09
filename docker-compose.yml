@@ -9,7 +9,7 @@ services:
       - ./Database:/data/db
   notes-backend:
     build: ./Notes_App
-    command: sh -c "gunicorn --bind 0.0.0.0:8000 --chdir notesapp notesapp.wsgi"
+    command: sh -c "python notesapp/manage.py collectstatic --noinput && python notesapp/manage.py makemigrations && python notesapp/manage.py migrate && gunicorn --bind 0.0.0.0:8000 --chdir notesapp notesapp.wsgi"
     volumes:
       - ./Notes_App/notesapp/static:/app/static
     container_name: notes-backend
