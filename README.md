@@ -5,6 +5,10 @@
 [Frontend part of the application](https://github.com/divanov11/Django-React-NotesApp)
 
 The app supports basic CRUD functionality and implements REST API
+
+#### In this project I have mastered:
+* integrating React with Django as separate apps
+* creating multi-container apps with Docker Compose
  
 ### How to run
 * Clone the repo
