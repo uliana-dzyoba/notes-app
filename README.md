@@ -21,6 +21,8 @@ The app supports basic CRUD functionality and implements REST API
    ```
 * Enter http://localhost:3000/ in a browser to see the app running
 
+* Enter http://localhost/api/ to view API
+
 ![screenshot](https://github.com/uliana-dzyoba/notes-app/blob/master/notes.png?raw=true)
 
 [Django]: https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green
